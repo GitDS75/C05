@@ -1,0 +1,10 @@
+ft is prime..............
+i = 2;
+while i * i <= nb et i < 46340
+tester si nb % i == 0
+si oui pas premier
+sinon i++
+ft next prime..............
+faire boucle
+si ft is prime == 0
+alors nb++
