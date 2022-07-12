@@ -1,0 +1,54 @@
+int len_max(int nb)
+{
+    int x;
+    int i;
+
+    x = nb;
+    i = 0;
+    while (x > 0)
+    {
+        x = x / 10;
+        i++;
+    }
+    i = (i / 2) + 1;
+    x = nb;
+    while (i > 1)
+    {
+        x = x / 10;
+        i--;
+    }
+    if (x > 46340)
+        return (46340);
+    return (x);
+}
+
+int ft_sqrt(int nb)
+{
+    int max;
+    int min;
+
+    if (nb <= 0)
+        return (0);
+    if (nb == 1)
+        return (1);
+    if (nb >= 100)
+    {
+        max = len_max(nb);
+        min = max / 10;
+    }
+     else
+    {
+        max = nb / 2;
+        min = 0;
+    }
+    while (max * max != nb && max >= min)
+        max--;
+    if (max * max == nb)
+        return (max);
+    return (0);
+}
+
+int main(void)
+{
+    printf("%d\n", ft_sqrt(-2147483647));
+}
